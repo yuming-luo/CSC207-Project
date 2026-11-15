@@ -65,53 +65,57 @@ Success outcome:
 Main success scenario:
 
 Extensions:
+
 ### Use Case 3
-Name: Start timer
+Name: View Study History and Analytics
 
 Primary actor: User clicking start timer
 
-Preconditions:
+Preconditions: Application running
 
-Trigger:
+Trigger: User opens the Study History screen.
 
-Success outcome:
+Success outcome: User can review saved study sessions and their study patterns.
 
 Main success scenario:
+1. User opens the Study History screen.
+2. System retrieves previously saved study sessions.
+3. System displays session dates, durations, and completion statuses.
+4. User selects a date range.
+5. System filters the session records.
+6. System calculates and shows statistics such as total focus time and completed session count.
+7. System displays the results in a clean way, such as a simple chart.
 
 Extensions:
-(Add additional use cases as needed.)
+- No saved sessions: System displays an empty message.
+- No matching dates: System indicates that no records match the selected filter.
+- Data loading failure: System displays an error message.
 
 ### Use Case 4
-Name: Timer started
+Name: Weather-based Study Environment
 
-Primary actor:
+Primary actor: User
 
-Preconditions:
+Preconditions: Application running
 
-Trigger:
+Trigger: User enters or selects a city and requests a weather update.
 
-Success outcome:
-
-Main success scenario:
-
-Extensions:
-(Add additional use cases as needed.)
-
-### Use Case 3
-Name: Timer end
-
-Primary actor:
-
-Preconditions:
-
-Trigger:
-
-Success outcome:
+Success outcome: System displays weather information and related background.
 
 Main success scenario:
+1. User inputs a city. 
+2. System finds geographic coordinates of the city.
+3. System sends a request to an external weather API.
+4. System receives and interprets the weather information.
+5. System categorizes the weather into "sunny", "cloudy", "rainy" and "snowy".
+6. Application updates the background to match the weather conditions.
+7. Application displays the weather description and temperature.
 
 Extensions:
-(Add additional use cases as needed.)
+- Invalid city: System asks the user to enter another location.
+- API unavailable: System keeps a default background and displays an error message.
+- Unexpected weather: System uses a neutral background.
+- Slow API response: The timer remains responsive while weather data is loading.
 
 ---
 
@@ -119,10 +123,10 @@ Extensions:
 
 | Team Member | MVP Use Case |
 |-------------|--------------|
-| Theint Thin Zar Thu | Use Case |
-| Onyx | Use Case |
-| Melody Luo | Use Case |
-| Rolly Gao | Use Case |
+| Theint Thin Zar Thu | Use Case 2|
+| Onyx | Use Case 4|
+| Melody Luo | Use Case 1|
+| Rolly Gao | Use Case 3|
 
 ---
 
