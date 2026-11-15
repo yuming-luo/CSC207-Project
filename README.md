@@ -1,7 +1,7 @@
 # Project Name
 
 ## Team Information
-
+We created our UI mock-up on Figma: https://www.figma.com/design/YSTlU7VrgzNDMusT0dzmcn/Study-Nook?node-id=1-2&t=zdmx0CAQMoOZQGze-1
 ### Team Members
 - Theint Thin Zar Thu
 - Onyx Chavanond
@@ -37,37 +37,58 @@ As a user, I want the background to change according to the weather of my chosen
 ## Use Cases
 
 ### Use Case 1
-Name: Set a timer
+Name: Study Timer
 
-Primary actor: User inputting time
+Primary actor: User starting study session
 
 Preconditions: 
 - Timer hasn't started
 
 Trigger: 
+- The student sets timer, selects drinks and starts timer
 
-Success outcome: 
+Success outcome: Study session finishes and is recorded into study history
 
 Main success scenario: 
+1. User sets duration of their study
+2. User selects a drink from a menu of drinks
+3. User click starts
+4. Drink decreases relative to timer
+5. Timer reaches zero
+6. Study session recorded into history
 
 Extensions: 
+- Invalid time: prompt user to set time again
+- Pause: User pauses the time and animation
+- Resume: User restarts the timer
+- Early termination: User ends the study session before set time and session is recorded as interrupted
 ### Use Case 2
-Name: Choose drink
+Name: Study goal
 
-Primary actor: User selecting drink
+Primary actor: User setting/viewing goals
 
-Preconditions: 
+Preconditions:
+- Application running
 
-Trigger:
+Trigger: User opens daily goal section
 
-Success outcome:
+Success outcome: Progress of daily goal completion is displayed
 
 Main success scenario:
+1. User opens daily goal section
+2. User enters daily or weekly target number of study hours
+3. System validates input
+4. System saves input
+5. System retrieves record of study session
+6. System calculates progress towards goal
+7. System displays progress to user
 
 Extensions:
-
+- Invalid input: prompt user to input again
+- Edit goal: user changes the target
+- Completed goal: user reaches the goal
 ### Use Case 3
-Name: View Study History and Analytics
+Name: Start timer
 
 Primary actor: User clicking start timer
 
@@ -123,10 +144,10 @@ Extensions:
 
 | Team Member | MVP Use Case |
 |-------------|--------------|
-| Theint Thin Zar Thu | Use Case 2|
-| Onyx | Use Case 4|
-| Melody Luo | Use Case 1|
-| Rolly Gao | Use Case 3|
+| Theint Thin Zar Thu | Study Goals |
+| Onyx | Weather-based Environment |
+| Melody Luo | Study Timer |
+| Rolly Gao | Study Analytics |
 
 ---
 
