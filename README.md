@@ -1,7 +1,7 @@
 # Project Name
 
 ## Team Information
-
+We created our UI mock-up on Figma: https://www.figma.com/design/YSTlU7VrgzNDMusT0dzmcn/Study-Nook?node-id=1-2&t=zdmx0CAQMoOZQGze-1
 ### Team Members
 - Theint Thin Zar Thu
 - Onyx Chavanond
