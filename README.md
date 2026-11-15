@@ -22,13 +22,13 @@ Inspired by the "study until I finish this drink" concept, this application allo
 ## User Stories
 
 ### User Story 1
-As a user, I want to be able to set a timer to keep track of how long I want to study.
+As a user, I want to be able to set a timer and select a drink. The drink will decrease as the timer starts. This will provide a visualization of my progress which will help increase my productivity.
 ### User Story 2
-As a user, I want to have a cute interface like a drink which decreases over time which will motivate me to study.
+As a user, I want to set a study-time goal and monitor my progress so I can accomplish my study goals.
 ### User Story 3
-As a user, I want to be able to select the drink that will be displayed with my timer.
+As a user, I want to be able to view my past study statistics so I can keep track of my productivity.
 ### User Story 4
-As a user, I want the background to change according to the weather so I can know what the weather is like outside when I'm indoors studying.
+As a user, I want the background to change according to the weather of my chosen city, so I have a personalized study environment.
 
 (Add additional user stories as needed.)
 
