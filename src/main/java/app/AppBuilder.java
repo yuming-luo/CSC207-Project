@@ -12,8 +12,7 @@ public class AppBuilder {
     final ViewManagerModel viewManagerModel = new ViewManagerModel();
     ViewManager viewManager = new ViewManager(cardPanel, cardLayout, viewManagerModel);
 
-    // set which data access implementation to use, can be any
-    // of the classes from the data_access package
+    // set which data access implementation to use, can be any of the classes from the data_access package
 
     // DAO version using local file storage
     final FileUserDataAccessObject userDataAccessObject = new FileUserDataAccessObject("users.csv", userFactory);
