@@ -12,7 +12,7 @@ import use_case.view_study_history.ViewStudyHistoryInputBoundary;
 import use_case.view_study_history.ViewStudyHistoryOutputBoundary;
 import use_case.view_study_history.ViewStudyHistoryInteractor;
 
-public class HistoryDemoMain {
+public class ViewStudyHistoryDemo {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

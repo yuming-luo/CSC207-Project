@@ -6,8 +6,7 @@ public class ViewStudyHistoryController {
 
     private final ViewStudyHistoryInputBoundary interactor;
 
-    public ViewStudyHistoryController(
-            ViewStudyHistoryInputBoundary interactor) {
+    public ViewStudyHistoryController(ViewStudyHistoryInputBoundary interactor) {
         this.interactor = interactor;
     }
 
