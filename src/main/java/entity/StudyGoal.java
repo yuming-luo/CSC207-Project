@@ -1,6 +1,9 @@
 package entity;
 
-// class to represent a student's weekly or daily goal
+/**
+ * class to represent a student's weekly or daily goal
+ */
+
 public class StudyGoal {
 
     private GoalType goalType;

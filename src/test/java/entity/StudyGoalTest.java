@@ -19,7 +19,6 @@ public class StudyGoalTest {
         assertEquals(GoalType.WEEKLY, goal.getGoalType());
         assertEquals(800, goal.getTargetMinutes());
     }
-
     @Test
     public void testZeroTargetMinutes() {
         assertThrows(IllegalArgumentException.class,
