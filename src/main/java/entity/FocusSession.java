@@ -12,7 +12,7 @@ public class FocusSession {
 
     // methods
     public void start() {
-        this.active = true
+        this.active = true;
     }
 
 }
