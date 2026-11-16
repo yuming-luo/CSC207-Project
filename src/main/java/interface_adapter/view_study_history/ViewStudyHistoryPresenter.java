@@ -8,14 +8,12 @@ public class ViewStudyHistoryPresenter
 
     private final ViewStudyHistoryViewModel viewModel;
 
-    public ViewStudyHistoryPresenter(
-            ViewStudyHistoryViewModel viewModel) {
+    public ViewStudyHistoryPresenter(ViewStudyHistoryViewModel viewModel) {
         this.viewModel = viewModel;
     }
 
     @Override
-    public void prepareSuccessView(
-            ViewStudyHistoryOutputData outputData) {
+    public void prepareSuccessView(ViewStudyHistoryOutputData outputData) {
 
         ViewStudyHistoryState state =
                 viewModel.getState();

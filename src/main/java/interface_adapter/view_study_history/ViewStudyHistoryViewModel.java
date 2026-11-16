@@ -9,8 +9,7 @@ public class ViewStudyHistoryViewModel {
 
     private ViewStudyHistoryState state = new ViewStudyHistoryState();
 
-    private final PropertyChangeSupport support =
-            new PropertyChangeSupport(this);
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public ViewStudyHistoryState getState() {
         return state;
@@ -24,8 +23,7 @@ public class ViewStudyHistoryViewModel {
         support.firePropertyChange("state", null, this.state);
     }
 
-    public void addPropertyChangeListener(
-            PropertyChangeListener listener) {
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
     }
 }
