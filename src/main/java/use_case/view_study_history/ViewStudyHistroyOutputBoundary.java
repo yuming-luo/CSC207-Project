@@ -1,5 +1,0 @@
-package use_case.view_study_history;
-
-public interface ViewStudyHistroyOutputBoundary {
-    void prepareSuccessView(ViewStudyHistroyOutputBoundary outputData)
-}
