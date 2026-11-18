@@ -44,7 +44,6 @@ public class FocusSession {
         }
         // If the SessionState is currently NOT_STARTED and the start method is called,
         // change SessionState to RUNNING to indicated study session has started
-        // Testing new github email
     }
 
 }
