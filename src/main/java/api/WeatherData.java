@@ -1,10 +1,13 @@
 package api;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,6 +18,7 @@ public class WeatherData implements WeatherDataInterface {
     private static final String API_URL = "https://api.weatherapi.com/v1/current.json";
     private static final String CITY = "name";
     private static final String CONDITION = "condition";
+    private static final String CONDITION_CODE = "code";
     private static final String IS_DAY = "is_day";
     private static  final String ERROR = "error";
     private static String API_KEY;
@@ -24,6 +28,34 @@ public class WeatherData implements WeatherDataInterface {
         API_KEY = System.getenv("key");
     }
 
+    /**
+     * Helper function to get the file name of image related to condition.
+     * @param condition_code is the unique code of the weather condition.
+     * @param is_day is the boolean indicator whether it is day or night.
+     * @return a string which is the file name of the weather image or the default image if exception occurs.
+     */
+    public String getWeatherImage(int condition_code, Boolean is_day) {
+        String image = "default.jpg";
+
+        try {
+            JSONArray jsonArray = new JSONArray(Files.readString(Paths.get("src/main/java/api/weather_conditions.json").toAbsolutePath()));
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject obj = jsonArray.getJSONObject(i);
+                if (obj.getInt("code") == condition_code) {
+                    if (is_day) {
+                        return obj.getString("day");
+                    } else {
+                        return obj.getString("night");
+                    }
+                }
+            }
+            return "default.txt";
+        } catch (IOException e) {
+            return "default.txt";
+        }
+    }
+
+    @Override
     public Weather getCurrentWeather(String city) {
         final OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
@@ -39,10 +71,13 @@ public class WeatherData implements WeatherDataInterface {
                 throw new RuntimeException(responseBody.getString("message"));
             } else {
                 final JSONObject currentWeather = responseBody.getJSONObject("current");
-                final JSONObject location = responseBody.getJSONObject("location");
+                final JSONObject condition = responseBody.getJSONObject(CONDITION);
+                final int condition_code = responseBody.getInt(CONDITION_CODE);
+                final boolean is_day = currentWeather.getBoolean(IS_DAY);
+                final String image = getWeatherImage(condition_code, is_day);
 
-                return new Weather(location.getString(CITY), currentWeather.getJSONObject(CONDITION).getString("text"),
-                        currentWeather.getBoolean(IS_DAY));
+                // Construct and Return Weather object
+                return new Weather(condition_code, condition.getString("text"), is_day, image);
             }
 
         }

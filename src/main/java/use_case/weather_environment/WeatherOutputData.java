@@ -12,4 +12,6 @@ public class WeatherOutputData {
     public Weather getWeather() {
         return weather;
     }
+
+
 }

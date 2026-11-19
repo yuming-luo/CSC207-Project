@@ -1,16 +1,19 @@
 package entity;
 
 public class Weather {
-    private String City;
-    private String Condition;
-    private boolean is_day;
+    private final int Code;
+    private final String Condition;
+    private final boolean is_day;
+    private final String image;
 
-    public Weather(String city, String condition, boolean is_day) {
-        this.City = city;
+    public Weather(int code, String condition, boolean is_day, String image) {
+        this.Code = code;
         this.Condition = condition;
         this.is_day = is_day;
+        this.image = image;
     }
-
-    public String getCondition() { return Condition; }
-    public boolean getIs_Day() { return is_day;}
+    public int getCode() { return this.Code; }
+    public String getCondition() { return this.Condition; }
+    public boolean getIs_Day() { return this.is_day;}
+    public String getImage() {return this.image; }
 }

@@ -15,9 +15,6 @@ public class WeatherViewDemo {
 
         application.add(cardPanel);
 
-//        viewManagerModel.setState(SignupViewModel.VIEW_NAME);
-//        viewManagerModel.notifyViewChanged();
-
         weatherViewModel = new WeatherViewModel();
         weatherView = new WeatherView(weatherViewModel);
         cardPanel.add(weatherView, weatherViewModel.VIEW_NAME);

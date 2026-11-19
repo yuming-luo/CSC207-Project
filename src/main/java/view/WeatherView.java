@@ -22,14 +22,13 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
     private WeatherController weatherController = null;
 
     public WeatherView(WeatherViewModel weatherViewModel) {
-
         this.weatherViewModel = weatherViewModel;
         this.weatherViewModel.addListener(this);
 
-        final JLabel title = new JLabel("Login Screen");
+        final JLabel title = new JLabel("Set Weather");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        final LabelTextPanel cityName = new LabelTextPanel(
+        final WeatherLabelPanel cityName = new WeatherLabelPanel(
                 new JLabel("City"), cityInputField);
 
         final JPanel buttons = new JPanel();
@@ -42,9 +41,7 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
                         if (evt.getSource().equals(select)) {
                             final WeatherState currentState = weatherViewModel.getState();
 
-                            weatherController.execute(
-                                    currentState.getWeather();
-                            );
+                            weatherController.execute(currentState.getCity());
                         }
                     }
                 }
@@ -100,7 +97,7 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
         cityInputField.setText(state.getCity());
     }
 
-    public void setLoginController(WeatherController weatherController) {
+    public void setWeatherController(WeatherController weatherController) {
         this.weatherController = weatherController;
     }
 }
