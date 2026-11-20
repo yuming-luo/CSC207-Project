@@ -20,6 +20,7 @@ public class InMemoryStudyGoalDataAccessObject
         goals.put(goal.getGoalType(), goal);
     }
 
+    @Override
     public StudyGoal getGoal(GoalType goalType) {
         return goals.get(goalType);
     }
