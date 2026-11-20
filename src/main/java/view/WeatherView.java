@@ -35,18 +35,6 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
         select = new JButton("select");
         buttons.add(select);
 
-        select.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        if (evt.getSource().equals(select)) {
-                            final WeatherState currentState = weatherViewModel.getState();
-
-                            weatherController.execute(currentState.getCity());
-                        }
-                    }
-                }
-        );
-
         cityInputField.getDocument().addDocumentListener(new DocumentListener() {
 
             private void documentListenerHelper() {
@@ -70,6 +58,18 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
                 documentListenerHelper();
             }
         });
+
+        select.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(select)) {
+                            final WeatherState currentState = weatherViewModel.getState();
+
+                            weatherController.execute(currentState.getCity());
+                        }
+                    }
+                }
+        );
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
