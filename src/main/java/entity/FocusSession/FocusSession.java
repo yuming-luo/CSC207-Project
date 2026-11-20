@@ -116,4 +116,34 @@ public class FocusSession {
         }
     }
 
+    public void updateElapsedTime(int secondsPassed) {
+        if (secondsPassed <= 0) {
+            throw new IllegalArgumentException("Seconds must be positive");
+        }
+
+        if (this.state == SessionState.RUNNING) {
+            if (this.timerType == TimerMode.COUNT_UP) {
+                updateCountUp(secondsPassed);
+            }
+            else if (this.timerType == TimerMode.COUNT_DOWN) {
+                updateCountDown(secondsPassed);
+            }
+        }
+    }
+
+    private void updateCountUp(int secondsPassed) {
+        this.elapsedSeconds += secondsPassed;
+    }
+
+    private void updateCountDown(int secondsPassed) {
+        int timeToAdd = Math.min(secondsPassed, this.remainingSeconds);
+
+        this.elapsedSeconds += timeToAdd;
+        this.remainingSeconds -= timeToAdd;
+
+        if (this.remainingSeconds == 0) {
+            complete();
+        }
+    }
+
 }
