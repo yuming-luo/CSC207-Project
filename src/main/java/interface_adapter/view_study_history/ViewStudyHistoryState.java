@@ -8,6 +8,7 @@ public class ViewStudyHistoryState {
 
     private List<StudyHistoryEntry> entries = new ArrayList<>();
     private int totalMinutes = 0;
+    private String error;
 
     public List<StudyHistoryEntry> getEntries() {
         return entries;
@@ -23,5 +24,13 @@ public class ViewStudyHistoryState {
 
     public void setTotalMinutes(int totalMinutes) {
         this.totalMinutes = totalMinutes;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }

@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import java.time.LocalDateTime;
+import use_case.view_study_history.StudyHistoryEntry;
 
 import data_access.InMemoryStudySessionDataAccessObject;
 import interface_adapter.view_study_history.ViewStudyHistoryController;
@@ -17,25 +19,34 @@ public class ViewStudyHistoryDemo {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
 
-            // Step 1: Create DAO
+            // Create DAO
             StudySessionDataAccessInterface dataAccess = new InMemoryStudySessionDataAccessObject();
 
-            // Step 2: Create ViewModel
+            // Add a sample session to test the DAO
+            StudyHistoryEntry testSession = new StudyHistoryEntry(
+                    LocalDateTime.now(),
+                    50,
+                    "Coffee"
+            );
+
+            dataAccess.addSession(testSession);
+
+            // Create ViewModel
             ViewStudyHistoryViewModel viewModel = new ViewStudyHistoryViewModel();
 
-            // Step 3: Create Presenter
+            // Create Presenter
             ViewStudyHistoryOutputBoundary presenter = new ViewStudyHistoryPresenter(viewModel);
 
-            // Step 4: Create Interactor
+            // Create Interactor
             ViewStudyHistoryInputBoundary interactor = new ViewStudyHistoryInteractor(dataAccess, presenter);
 
-            // Step 5: Create Controller
+            // Create Controller
             ViewStudyHistoryController controller = new ViewStudyHistoryController(interactor);
 
-            // Step 6: Create View
+            // Create View
             ViewStudyHistoryPanel panel = new ViewStudyHistoryPanel(viewModel, controller);
 
-            // Step 7: Create window
+            // Create window
             JFrame frame = new JFrame("Study Nook - Study History");
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             frame.setContentPane(panel);
@@ -43,7 +54,7 @@ public class ViewStudyHistoryDemo {
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
 
-            // Step 8: Load study history
+            // Load study history
             controller.execute();
         });
     }

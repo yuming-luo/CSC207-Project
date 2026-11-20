@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface StudySessionDataAccessInterface {
     List<StudyHistoryEntry> getCompletedSessions();
+    void addSession(StudyHistoryEntry session);
 }
