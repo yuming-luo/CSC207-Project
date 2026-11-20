@@ -32,4 +32,8 @@ public class InMemoryStudySessionDataAccessObject
     public List<StudyHistoryEntry> getCompletedSessions() {
         return sessions;
     }
+
+    public void addSession(StudyHistoryEntry session) {
+        sessions.add(session);
+    }
 }
