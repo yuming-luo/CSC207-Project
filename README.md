@@ -59,9 +59,10 @@ Main success scenario:
 
 Extensions: 
 - Invalid time: prompt user to set time again
-- Pause: User pauses the time and animation
-- Resume: User restarts the timer
+- Pause: User pauses the time and animation. Pause time lasts for 15 minutes, and user must choose to resume their study session within this time or let the pause time out.
+- Resume: User restarts the timer after pausing
 - Early termination: User ends the study session before set time and session is recorded as interrupted
+- Pause timeout: User chooses to pause study session and the pause timer runs out so the study session automatically terminates and saves
 ### Use Case 2
 Name: Study goal
 
