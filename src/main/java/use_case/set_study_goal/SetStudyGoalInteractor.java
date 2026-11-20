@@ -27,8 +27,9 @@ public class SetStudyGoalInteractor implements SetStudyGoalInputBoundary {
             outputBoundary.prepareFailView("Target minutes must be positive");
         }
         else {
-            StudyGoal goal = new StudyGoal(
-                    inputData.getGoalType(),
+            boolean doesExist = dataAccess.getGoal(inputData.getGoalType()) != null;
+
+            StudyGoal goal = new StudyGoal(inputData.getGoalType(),
                     inputData.getTargetMinutes());
 
             dataAccess.save(goal);
@@ -36,7 +37,7 @@ public class SetStudyGoalInteractor implements SetStudyGoalInputBoundary {
             SetStudyGoalOutputData outputData =
                     new SetStudyGoalOutputData(
                             goal.getGoalType(),
-                            goal.getTargetMinutes());
+                            goal.getTargetMinutes(), doesExist);
 
             outputBoundary.prepareSuccessView(outputData);
         }

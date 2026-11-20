@@ -44,7 +44,7 @@ public class SetStudyGoalView extends JPanel
         add(new JLabel("Target minutes:"));
         add(minutesField);
 
-        JButton saveButton = new JButton("Set Goal");
+        JButton saveButton = new JButton("Save Goal");
         add(saveButton);
         add(messageLabel);
 
