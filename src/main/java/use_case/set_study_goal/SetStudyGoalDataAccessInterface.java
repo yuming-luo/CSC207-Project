@@ -1,5 +1,6 @@
 package use_case.set_study_goal;
 
+import entity.GoalType;
 import entity.StudyGoal;
 
 /**
@@ -8,4 +9,6 @@ import entity.StudyGoal;
 public interface SetStudyGoalDataAccessInterface {
 
     void save(StudyGoal goal);
+
+    StudyGoal getGoal(GoalType goalType);
 }

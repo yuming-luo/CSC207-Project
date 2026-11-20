@@ -19,10 +19,20 @@ public class SetStudyGoalPresenter implements SetStudyGoalOutputBoundary {
     public void prepareSuccessView(SetStudyGoalOutputData outputData) {
         SetStudyGoalState state = viewModel.getState();
 
-        String message = outputData.getGoalType()
-                + " goal set to "
-                + outputData.getTargetMinutes()
-                + " minutes!";
+        String message;
+
+        if (outputData.getDoesExist()) {
+            message = outputData.getGoalType()
+                    + " goal updated to "
+                    + outputData.getTargetMinutes()
+                    + " minutes!";
+        }
+        else {
+            message = outputData.getGoalType()
+                    + " goal set to "
+                    + outputData.getTargetMinutes()
+                    + " minutes!";
+        }
 
         state.setMessage(message);
         state.setError("");

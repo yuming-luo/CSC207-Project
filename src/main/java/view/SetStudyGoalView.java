@@ -5,6 +5,7 @@ import entity.GoalType;
 import interface_adapter.set_study_goal.SetStudyGoalController;
 import interface_adapter.set_study_goal.SetStudyGoalState;
 import interface_adapter.set_study_goal.SetStudyGoalViewModel;
+import interface_adapter.delete_study_goal.DeleteStudyGoalController;
 
 import java.awt.FlowLayout;
 import java.beans.PropertyChangeEvent;
@@ -24,6 +25,7 @@ public class SetStudyGoalView extends JPanel
 
     private final SetStudyGoalController controller;
     private final SetStudyGoalViewModel viewModel;
+    private final DeleteStudyGoalController deleteController;
 
     private final JComboBox<GoalType> goalTypeBox =
             new JComboBox<>(GoalType.values());
@@ -32,8 +34,10 @@ public class SetStudyGoalView extends JPanel
     private final JLabel messageLabel = new JLabel(" ");
 
     public SetStudyGoalView(SetStudyGoalController controller,
+                            DeleteStudyGoalController deleteController,
                             SetStudyGoalViewModel viewModel) {
         this.controller = controller;
+        this.deleteController = deleteController;
         this.viewModel = viewModel;
 
         setLayout(new FlowLayout());
@@ -44,8 +48,12 @@ public class SetStudyGoalView extends JPanel
         add(new JLabel("Target minutes:"));
         add(minutesField);
 
-        JButton saveButton = new JButton("Set Goal");
+        JButton saveButton = new JButton("Save Goal");
         add(saveButton);
+
+        JButton deleteButton = new JButton("Delete Goal");
+        add(deleteButton);
+
         add(messageLabel);
 
         saveButton.addActionListener(event -> {
@@ -61,6 +69,13 @@ public class SetStudyGoalView extends JPanel
             catch (NumberFormatException error) {
                 messageLabel.setText("Please enter numbers.");
             }
+        });
+
+        deleteButton.addActionListener(event -> {
+            GoalType goalType =
+                    (GoalType) goalTypeBox.getSelectedItem();
+
+            deleteController.execute(goalType);
         });
 
         viewModel.addPropertyChangeListener(this);

@@ -165,7 +165,11 @@ Extensions:
 
 **API Name:** Weather API
 
-**Documentation:** [Link]
+**Documentation:** https://www.weatherapi.com/docs/
+
+Example call: Current Weather London
+
+{ "location": { "name": "London", "region": "City of London, Greater London", "country": "United Kingdom", "lat": 51.5171, "lon": -0.1062, "tz_id": "Europe/London", "localtime_epoch": 1794846341, "localtime": "2026-11-16 16:25" }, "current": { "last_updated_epoch": 1794845700, "last_updated": "2026-11-16 16:15", "temp_c": 6, "temp_f": 42.8, "is_day": 0, "condition": { "text": "Partly Cloudy", "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png", "code": 1003 }, "wind_mph": 2.2, "wind_degree": 279, "pressure_mb": 1005, "precip_mm": 0, "humidity": 70, "cloud": 26, "feelslike_c": 3.6, "windchill_c": 6, "heatindex_c": 6, "vis_miles": 6, "uv": 0, "gust_mph": 6.4, "will_it_rain": 0, "chance_of_rain": 8, "will_it_snow": 0, "chance_of_snow": 0 } }
 
 **How it is used in the program:**
 
