@@ -18,4 +18,12 @@ public class WeatherPresenter implements WeatherOutputBoundary {
         weatherViewModel.notifyStateChanged();
     }
 
+    @Override
+    public void prepareFailView(String errorMessage) {
+
+        final WeatherState weatherState = weatherViewModel.getState();
+        weatherState.setWeatherError(errorMessage);
+        weatherViewModel.notifyStateChanged();
+    }
+
 }
