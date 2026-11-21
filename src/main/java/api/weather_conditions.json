@@ -5,7 +5,7 @@
 		"night": "Clear",
 		"icon": 113,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1003,
@@ -13,7 +13,7 @@
 		"night": "Partly cloudy",
 		"icon": 116,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1006,
@@ -21,7 +21,7 @@
 		"night": "Cloudy",
 		"icon": 119,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1009,
@@ -29,7 +29,7 @@
 		"night": "Overcast",
 		"icon": 122,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1012,
@@ -37,7 +37,7 @@
 		"night": "Haze",
 		"icon": 125,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1015,
@@ -45,7 +45,7 @@
 		"night": "Dust haze",
 		"icon": 128,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1018,
@@ -53,7 +53,7 @@
 		"night": "Blowing dust",
 		"icon": 131,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1021,
@@ -61,7 +61,7 @@
 		"night": "Dust storm",
 		"icon": 134,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1024,
@@ -69,7 +69,7 @@
 		"night": "Sandstorm",
 		"icon": 137,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1027,
@@ -77,7 +77,7 @@
 		"night": "Severe sandstorm",
 		"icon": 140,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1030,
@@ -85,7 +85,7 @@
 		"night": "Mist",
 		"icon": 143,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1033,
@@ -93,7 +93,7 @@
 		"night": "Smoke",
 		"icon": 146,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1036,
@@ -101,7 +101,7 @@
 		"night": "Smoky haze",
 		"icon": 149,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1039,
@@ -109,7 +109,7 @@
 		"night": "Smog",
 		"icon": 152,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1042,
@@ -117,7 +117,7 @@
 		"night": "Severe smog",
 		"icon": 155,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1045,
@@ -125,7 +125,7 @@
 		"night": "Saharan dust",
 		"icon": 158,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1048,
@@ -133,7 +133,7 @@
 		"night": "Dust",
 		"icon": 161,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1063,
@@ -141,7 +141,7 @@
 		"night": "Patchy rain possible",
 		"icon": 176,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1066,
@@ -149,7 +149,7 @@
 		"night": "Patchy snow possible",
 		"icon": 179,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1069,
@@ -157,7 +157,7 @@
 		"night": "Patchy sleet possible",
 		"icon": 182,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1072,
@@ -165,7 +165,7 @@
 		"night": "Patchy freezing drizzle possible",
 		"icon": 185,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1087,
@@ -173,7 +173,7 @@
 		"night": "Thundery outbreaks possible",
 		"icon": 200,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1114,
@@ -181,7 +181,7 @@
 		"night": "Blowing snow",
 		"icon": 227,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1117,
@@ -189,7 +189,7 @@
 		"night": "Blizzard",
 		"icon": 230,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1135,
@@ -197,7 +197,7 @@
 		"night": "Fog",
 		"icon": 248,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1147,
@@ -205,7 +205,7 @@
 		"night": "Freezing fog",
 		"icon": 260,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1150,
@@ -213,7 +213,7 @@
 		"night": "Patchy light drizzle",
 		"icon": 263,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1153,
@@ -221,7 +221,7 @@
 		"night": "Light drizzle",
 		"icon": 266,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1168,
@@ -229,7 +229,7 @@
 		"night": "Freezing drizzle",
 		"icon": 281,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1171,
@@ -237,7 +237,7 @@
 		"night": "Heavy freezing drizzle",
 		"icon": 284,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1180,
@@ -245,7 +245,7 @@
 		"night": "Patchy light rain",
 		"icon": 293,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1183,
@@ -253,7 +253,7 @@
 		"night": "Light rain",
 		"icon": 296,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1186,
@@ -261,7 +261,7 @@
 		"night": "Moderate rain at times",
 		"icon": 299,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1189,
@@ -269,7 +269,7 @@
 		"night": "Moderate rain",
 		"icon": 302,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1192,
@@ -277,7 +277,7 @@
 		"night": "Heavy rain at times",
 		"icon": 305,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1195,
@@ -285,7 +285,7 @@
 		"night": "Heavy rain",
 		"icon": 308,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1198,
@@ -293,7 +293,7 @@
 		"night": "Light freezing rain",
 		"icon": 311,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1201,
@@ -301,7 +301,7 @@
 		"night": "Moderate or heavy freezing rain",
 		"icon": 314,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1204,
@@ -309,7 +309,7 @@
 		"night": "Light sleet",
 		"icon": 317,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1207,
@@ -317,7 +317,7 @@
 		"night": "Moderate or heavy sleet",
 		"icon": 320,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1210,
@@ -325,7 +325,7 @@
 		"night": "Patchy light snow",
 		"icon": 323,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1213,
@@ -333,7 +333,7 @@
 		"night": "Light snow",
 		"icon": 326,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1216,
@@ -341,7 +341,7 @@
 		"night": "Patchy moderate snow",
 		"icon": 329,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1219,
@@ -349,7 +349,7 @@
 		"night": "Moderate snow",
 		"icon": 332,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1222,
@@ -357,7 +357,7 @@
 		"night": "Patchy heavy snow",
 		"icon": 335,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1225,
@@ -365,7 +365,7 @@
 		"night": "Heavy snow",
 		"icon": 338,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1237,
@@ -373,7 +373,7 @@
 		"night": "Ice pellets",
 		"icon": 350,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1240,
@@ -381,7 +381,7 @@
 		"night": "Light rain shower",
 		"icon": 353,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1243,
@@ -389,7 +389,7 @@
 		"night": "Moderate or heavy rain shower",
 		"icon": 356,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1246,
@@ -397,7 +397,7 @@
 		"night": "Torrential rain shower",
 		"icon": 359,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1249,
@@ -405,7 +405,7 @@
 		"night": "Light sleet showers",
 		"icon": 362,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1252,
@@ -413,7 +413,7 @@
 		"night": "Moderate or heavy sleet showers",
 		"icon": 365,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1255,
@@ -421,7 +421,7 @@
 		"night": "Light snow showers",
 		"icon": 368,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1258,
@@ -429,7 +429,7 @@
 		"night": "Moderate or heavy snow showers",
 		"icon": 371,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1261,
@@ -437,7 +437,7 @@
 		"night": "Light showers of ice pellets",
 		"icon": 374,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1264,
@@ -445,7 +445,7 @@
 		"night": "Moderate or heavy showers of ice pellets",
 		"icon": 377,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1273,
@@ -453,7 +453,7 @@
 		"night": "Patchy light rain with thunder",
 		"icon": 386,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1276,
@@ -461,7 +461,7 @@
 		"night": "Moderate or heavy rain with thunder",
 		"icon": 389,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1279,
@@ -469,7 +469,7 @@
 		"night": "Patchy light snow with thunder",
 		"icon": 392,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	},
 	{
 		"code": 1282,
@@ -477,6 +477,6 @@
 		"night": "Moderate or heavy snow with thunder",
 		"icon": 395,
 		"day_image": "default.jpg",
-		"night_image" : "defaults.jpg"
+		"night_image" : "default.jpg"
 	}
 ]

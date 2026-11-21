@@ -34,29 +34,34 @@ public class WeatherData implements WeatherDataInterface {
      * @param is_day is the boolean indicator whether it is day or night.
      * @return a string which is the file name of the weather image or the default image if exception occurs.
      */
-    public String getWeatherImage(int condition_code, Boolean is_day) {
-        String image = "default.jpg";
-
+    public String getWeatherImage(int condition_code, int is_day) {
+        String image = null;
         try {
             JSONArray jsonArray = new JSONArray(Files.readString(Paths.get("src/main/java/api/weather_conditions.json").toAbsolutePath()));
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject obj = jsonArray.getJSONObject(i);
                 if (obj.getInt("code") == condition_code) {
-                    if (is_day) {
-                        return obj.getString("day");
+                    if (is_day == 1) {
+                        image = obj.getString("day_image");
                     } else {
-                        return obj.getString("night");
+                        image = obj.getString("night_image");
                     }
                 }
             }
-            return "default.txt";
         } catch (IOException e) {
-            return "default.txt";
+            System.out.println("Image not found");;
         }
+
+        System.out.println(image);
+
+        return image;
     }
 
     @Override
     public Weather getCurrentWeather(String city) {
+        setAPIKey();
+
+        // Build request to api
         final OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         final Request request = new Request.Builder()
@@ -68,12 +73,14 @@ public class WeatherData implements WeatherDataInterface {
             final JSONObject responseBody = new JSONObject(response.body().string());
 
             if (responseBody.has(ERROR)) {
+                // According to api library, an error message will be returned if an error occurs
                 throw new RuntimeException(responseBody.getString("message"));
             } else {
+                // Get necessary values from response body
                 final JSONObject currentWeather = responseBody.getJSONObject("current");
-                final JSONObject condition = responseBody.getJSONObject(CONDITION);
-                final int condition_code = responseBody.getInt(CONDITION_CODE);
-                final boolean is_day = currentWeather.getBoolean(IS_DAY);
+                final JSONObject condition = currentWeather.getJSONObject(CONDITION);
+                final int condition_code = condition.getInt(CONDITION_CODE);
+                final int is_day = currentWeather.getInt(IS_DAY);
                 final String image = getWeatherImage(condition_code, is_day);
 
                 // Construct and Return Weather object

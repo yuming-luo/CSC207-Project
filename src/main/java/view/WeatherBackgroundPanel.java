@@ -1,15 +1,21 @@
 package view;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class WeatherBackgroundPanel extends JPanel {
-    private final Image background;
+    private Image background;
 
-    public WeatherBackgroundPanel(Image background)
-    {
-        this.background = background;
-        setLayout( new BorderLayout() );
+    public WeatherBackgroundPanel(String imageName) {
+        try {
+            this.background = ImageIO.read(new File("images/" + imageName));
+            setLayout( new BorderLayout() );
+        } catch (IOException e) {
+            System.out.println("Image not found");
+        }
     }
 
     @Override

@@ -1,27 +1,34 @@
 package view;
 
+import api.WeatherData;
+import interface_adapter.weather_environment.WeatherController;
+import interface_adapter.weather_environment.WeatherPresenter;
 import interface_adapter.weather_environment.WeatherViewModel;
+import use_case.weather_environment.WeatherDataInterface;
+import use_case.weather_environment.WeatherInputBoundary;
+import use_case.weather_environment.WeatherInteractor;
+import use_case.weather_environment.WeatherOutputBoundary;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class WeatherViewDemo {
-    public static void main(String[] args) {
-        final JPanel cardPanel = new JPanel();
-        WeatherViewModel weatherViewModel;
-        WeatherView weatherView;
+        public static void main(String[] args) {
+            JFrame frame = new JFrame("Weather Example");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JFrame application = new JFrame("Set Weather Example");
-        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            WeatherViewModel  weatherViewModel = new WeatherViewModel();
+            WeatherDataInterface weatherData = new WeatherData();
+            WeatherOutputBoundary weatherPresenter = new WeatherPresenter(weatherViewModel);
+            WeatherInputBoundary weatherInteractor = new WeatherInteractor(weatherData, weatherPresenter);
+            WeatherController weatherController = new WeatherController(weatherInteractor);
+            WeatherView weatherView = new WeatherView(weatherViewModel);
+            weatherView.setWeatherController(weatherController);
 
-        application.add(cardPanel);
-
-        weatherViewModel = new WeatherViewModel();
-        weatherView = new WeatherView(weatherViewModel);
-        cardPanel.add(weatherView, weatherViewModel.VIEW_NAME);
-
-        application.pack();
-        application.setLocationRelativeTo(null);
-        application.setVisible(true);
-
-    }
+            frame.setContentPane(weatherView);
+            frame.pack();
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
 }
+
