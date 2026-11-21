@@ -1,4 +1,8 @@
 package use_case.focus_session;
 
-public class FocusSessionOutputBoundary {
+public interface FocusSessionOutputBoundary {
+
+    void prepareSuccessView(FocusSessionOutputData outputData);
+
+    void prepareFailView(String error);
 }
