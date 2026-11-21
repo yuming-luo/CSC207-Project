@@ -10,15 +10,8 @@ public class WeatherState {
 
     public String getCity() { return city; }
 
-    public String getCityError() {
-        return cityError;
-    }
-
     public void setCity(String city) {
         this.city = city;
-    }
-    public void setCityError(String cityError) {
-        this.cityError = cityError;
     }
 
     public Weather getWeather() {

@@ -16,7 +16,6 @@ import use_case.weather_environment.WeatherDataInterface;
 
 public class WeatherData implements WeatherDataInterface {
     private static final String API_URL = "https://api.weatherapi.com/v1/current.json";
-    private static final String CITY = "name";
     private static final String CONDITION = "condition";
     private static final String CONDITION_CODE = "code";
     private static final String IS_DAY = "is_day";
@@ -49,7 +48,7 @@ public class WeatherData implements WeatherDataInterface {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Image not found");;
+            System.out.println("Image not found");
         }
 
         System.out.println(image);
