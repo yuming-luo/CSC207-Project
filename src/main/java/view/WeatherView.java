@@ -6,13 +6,16 @@ import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
-import interface_adapter.weather_environment.WeatherViewModel;
-import interface_adapter.weather_environment.WeatherState;
-import interface_adapter.weather_environment.WeatherController;
-import interface_adapter.weather_environment.WeatherViewModelListener;
+import api.WeatherData;
+import interface_adapter.weather_environment.*;
+import use_case.weather_environment.WeatherDataInterface;
+import use_case.weather_environment.WeatherInputBoundary;
+import use_case.weather_environment.WeatherInteractor;
+import use_case.weather_environment.WeatherOutputBoundary;
 
-public class WeatherView extends JPanel implements ActionListener, WeatherViewModelListener{
+public class WeatherView extends JLayeredPane implements ActionListener, WeatherViewModelListener{
     private final WeatherViewModel weatherViewModel;
 
     private final JTextField cityInputField = new JTextField(15);
@@ -21,34 +24,34 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
     private final JButton select;
     private WeatherController weatherController = null;
 
-    public WeatherView(WeatherViewModel weatherViewModel) {
+    private String weatherImage = "night.jpg";
 
+    public WeatherView(WeatherViewModel weatherViewModel) {
         this.weatherViewModel = weatherViewModel;
         this.weatherViewModel.addListener(this);
 
-        final JLabel title = new JLabel("Login Screen");
+        this.setPreferredSize(new Dimension(400, 400));
+
+        // Create label for background image
+        JLabel backgroundImage = new JLabel();
+        backgroundImage.setIcon(new ImageIcon("images/" + weatherImage));
+
+        backgroundImage.setBounds(0, 0, 400, 400);
+
+        // Create a panel for all foreground components
+        JPanel foreground = new JPanel();
+
+        final JLabel title = new JLabel("Set Weather");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        final LabelTextPanel cityName = new LabelTextPanel(
+        final WeatherLabelPanel cityName = new WeatherLabelPanel(
                 new JLabel("City"), cityInputField);
+        cityName.setOpaque(false);
 
         final JPanel buttons = new JPanel();
         select = new JButton("select");
         buttons.add(select);
-
-        select.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        if (evt.getSource().equals(select)) {
-                            final WeatherState currentState = weatherViewModel.getState();
-
-                            weatherController.execute(
-                                    currentState.getWeather();
-                            );
-                        }
-                    }
-                }
-        );
+        buttons.setOpaque(false);
 
         cityInputField.getDocument().addDocumentListener(new DocumentListener() {
 
@@ -74,12 +77,35 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
             }
         });
 
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        select.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(select)) {
+                            final WeatherState currentState = weatherViewModel.getState();
 
-        this.add(title);
-        this.add(cityName);
-        this.add(cityErrorField);
-        this.add(buttons);
+                            weatherController.execute(currentState.getCity());
+                            weatherImage = currentState.getWeather().getImage();
+                            System.out.println(weatherImage);
+                            backgroundImage.setIcon(new ImageIcon("images/" + weatherImage));
+                        }
+                    }
+                }
+        );
+
+        foreground.setLayout(new BoxLayout(foreground, BoxLayout.Y_AXIS));
+
+        foreground.add(title);
+        foreground.add(cityName);
+        foreground.add(cityErrorField);
+        foreground.add(buttons);
+
+        foreground.setBounds(0, 0, 400, 400);
+        foreground.setOpaque(false);
+
+        // layer the foreground onto the background
+        this.add(backgroundImage, Integer.valueOf(0));
+        this.add(foreground, Integer.valueOf(1));
+
     }
 
     /**
@@ -100,7 +126,7 @@ public class WeatherView extends JPanel implements ActionListener, WeatherViewMo
         cityInputField.setText(state.getCity());
     }
 
-    public void setLoginController(WeatherController weatherController) {
+    public void setWeatherController(WeatherController weatherController) {
         this.weatherController = weatherController;
     }
 }
