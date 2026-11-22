@@ -5,6 +5,7 @@ public class LoginState {
     private String username = "";
     private String password = "";
     private String error = "";
+    private boolean loggedIn = false;
 
     public String getUsername() {
         return username;
@@ -28,5 +29,13 @@ public class LoginState {
 
     public void setError(String error) {
         this.error = error;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 }

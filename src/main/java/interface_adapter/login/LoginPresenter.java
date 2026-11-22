@@ -20,6 +20,7 @@ public class LoginPresenter implements LoginOutputBoundary {
         state.setUsername(outputData.getUsername());
         state.setPassword("");
         state.setError("");
+        state.setLoggedIn(true);
 
         loginViewModel.setState(state);
         loginViewModel.firePropertyChanged();
@@ -32,6 +33,7 @@ public class LoginPresenter implements LoginOutputBoundary {
         LoginState state = loginViewModel.getState();
 
         state.setError(errorMessage);
+        state.setLoggedIn(false);
 
         loginViewModel.setState(state);
         loginViewModel.firePropertyChanged();

@@ -13,17 +13,23 @@ import entity.UserFactory;
 
 import interface_adapter.login.LoginController;
 import interface_adapter.login.LoginPresenter;
+import interface_adapter.login.LoginState;
 import interface_adapter.login.LoginViewModel;
 
 import interface_adapter.signup.SignupController;
 import interface_adapter.signup.SignupPresenter;
 import interface_adapter.signup.SignupViewModel;
 
+import interface_adapter.logout.LogoutController;
+import interface_adapter.logout.LogoutPresenter;
+
 import use_case.login.LoginInteractor;
 import use_case.signup.SignupInteractor;
+import use_case.logout.LogoutInteractor;
 
 import view.LoginView;
 import view.SignupView;
+import view.LoggedInView;
 
 public class AuthenticationApp {
 
@@ -57,12 +63,37 @@ public class AuthenticationApp {
             LoginView loginView =
                     new LoginView(loginViewModel, loginController);
 
+            // Initialize logout components
+            LogoutPresenter logoutPresenter =
+                    new LogoutPresenter(loginViewModel);
+
+            LogoutInteractor logoutInteractor =
+                    new LogoutInteractor(logoutPresenter);
+
+            LogoutController logoutController =
+                    new LogoutController(logoutInteractor);
+
+            LoggedInView loggedInView =
+                    new LoggedInView(loginViewModel, logoutController);
+
             // Create navigation between signup and login
             CardLayout cardLayout = new CardLayout();
             JPanel views = new JPanel(cardLayout);
 
             views.add(signupView, SignupViewModel.VIEW_NAME);
             views.add(loginView, LoginViewModel.VIEW_NAME);
+            views.add(loggedInView, LoggedInView.VIEW_NAME);
+
+            loginViewModel.addPropertyChangeListener(event -> {
+                if ("state".equals(event.getPropertyName())) {
+                    if (loginViewModel.getState().isLoggedIn()) {
+                        cardLayout.show(views, LoggedInView.VIEW_NAME);
+                    }
+                    else if (loginViewModel.getState().getError().isEmpty()) {
+                        cardLayout.show(views, LoginViewModel.VIEW_NAME);
+                    }
+                }
+            });
 
             JButton showSignupButton = new JButton("Sign Up");
             JButton showLoginButton = new JButton("Log In");
@@ -76,6 +107,22 @@ public class AuthenticationApp {
             JPanel navigationPanel = new JPanel();
             navigationPanel.add(showSignupButton);
             navigationPanel.add(showLoginButton);
+
+            // Update navigation based on login state
+            loginViewModel.addPropertyChangeListener(event -> {
+                if ("state".equals(event.getPropertyName())) {
+                    LoginState state = loginViewModel.getState();
+
+                    if (state.isLoggedIn()) {
+                        navigationPanel.setVisible(false);
+                        cardLayout.show(views, LoggedInView.VIEW_NAME);
+                    }
+                    else if (state.getError().isEmpty()) {
+                        navigationPanel.setVisible(true);
+                        cardLayout.show(views, LoginViewModel.VIEW_NAME);
+                    }
+                }
+            });
 
             JPanel mainPanel = new JPanel(new BorderLayout());
             mainPanel.add(navigationPanel, BorderLayout.NORTH);

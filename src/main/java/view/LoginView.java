@@ -59,7 +59,7 @@ public class LoginView extends JPanel implements PropertyChangeListener {
         if ("state".equals(event.getPropertyName())) {
             LoginState state = loginViewModel.getState();
 
-            // Clear the password field after a login attempt
+            // Clear the password field
             passwordField.setText("");
 
             if (state.getError() != null && !state.getError().isEmpty()) {
@@ -70,7 +70,7 @@ public class LoginView extends JPanel implements PropertyChangeListener {
                         JOptionPane.ERROR_MESSAGE
                 );
             }
-            else {
+            else if (state.isLoggedIn()) {
                 JOptionPane.showMessageDialog(
                         this,
                         "Welcome, " + state.getUsername() + "!",
