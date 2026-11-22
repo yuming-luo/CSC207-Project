@@ -18,6 +18,7 @@ import interface_adapter.login.LoginViewModel;
 
 import interface_adapter.signup.SignupController;
 import interface_adapter.signup.SignupPresenter;
+import interface_adapter.signup.SignupState;
 import interface_adapter.signup.SignupViewModel;
 
 import interface_adapter.logout.LogoutController;
@@ -83,6 +84,17 @@ public class AuthenticationApp {
             views.add(signupView, SignupViewModel.VIEW_NAME);
             views.add(loginView, LoginViewModel.VIEW_NAME);
             views.add(loggedInView, LoggedInView.VIEW_NAME);
+
+            // Navigate to login after successful signup
+            signupViewModel.addPropertyChangeListener(event -> {
+                if ("state".equals(event.getPropertyName())) {
+                    SignupState state = signupViewModel.getState();
+
+                    if (state.getError() == null || state.getError().isEmpty()) {
+                        cardLayout.show(views, LoginViewModel.VIEW_NAME);
+                    }
+                }
+            });
 
             loginViewModel.addPropertyChangeListener(event -> {
                 if ("state".equals(event.getPropertyName())) {

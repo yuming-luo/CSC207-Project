@@ -22,6 +22,20 @@ public class SignupInteractor implements SignupInputBoundary {
     @Override
     public void execute(SignupInputData inputData) {
 
+        // Validate required signup fields
+        if (inputData.getUsername() == null
+                || inputData.getUsername().trim().isEmpty()
+                || inputData.getPassword() == null
+                || inputData.getPassword().isEmpty()
+                || inputData.getRepeatPassword() == null
+                || inputData.getRepeatPassword().isEmpty()) {
+
+            signupPresenter.prepareFailView(
+                    "Username and password cannot be empty."
+            );
+            return;
+        }
+
         // Check whether the username already exists
         if (userDataAccessObject.existsByName(inputData.getUsername())) {
             signupPresenter.prepareFailView("Username already exists.");
