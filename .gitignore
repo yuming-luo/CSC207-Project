@@ -1,8 +1,0 @@
-# Generated Java build files
-target/
-out/
-*.class
-
-# IntelliJ local configuration
-.idea/
-*.iml
