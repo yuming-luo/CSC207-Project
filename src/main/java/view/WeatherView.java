@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import api.WeatherData;
+import entity.Weather;
 import interface_adapter.weather_environment.*;
 import use_case.weather_environment.WeatherDataInterface;
 import use_case.weather_environment.WeatherInputBoundary;
@@ -84,9 +85,12 @@ public class WeatherView extends JLayeredPane implements ActionListener, Weather
                             final WeatherState currentState = weatherViewModel.getState();
 
                             weatherController.execute(currentState.getCity());
-                            weatherImage = currentState.getWeather().getImage();
-                            System.out.println(weatherImage);
-                            backgroundImage.setIcon(new ImageIcon("images/" + weatherImage));
+                            Weather weather = currentState.getWeather();
+                            if (weather != null) {
+                                weatherImage = weather.getImage();
+                                System.out.println(weatherImage);
+                                backgroundImage.setIcon(new ImageIcon("images/" + weatherImage));
+                            }
                         }
                     }
                 }
