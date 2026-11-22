@@ -73,7 +73,8 @@ public class WeatherData implements WeatherDataInterface {
 
             if (responseBody.has(ERROR)) {
                 // According to api library, an error message will be returned if an error occurs
-                throw new RuntimeException(responseBody.getString("message"));
+                // throw new RuntimeException(responseBody.getString("message"));
+                return null;
             } else {
                 // Get necessary values from response body
                 final JSONObject currentWeather = responseBody.getJSONObject("current");

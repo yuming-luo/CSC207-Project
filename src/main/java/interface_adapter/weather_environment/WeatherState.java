@@ -4,7 +4,6 @@ import entity.Weather;
 
 public class WeatherState {
     private String city;
-    private String cityError;
     private Weather weather;
     private String weatherError;
 
@@ -25,6 +24,7 @@ public class WeatherState {
     public void setWeather(Weather weather) {
         this.weather = weather;
     }
+
     public void setWeatherError(String weatherError) {
         this.weatherError = weatherError;
     }

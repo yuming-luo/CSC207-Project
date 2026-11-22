@@ -16,9 +16,14 @@ public class WeatherInteractor implements WeatherInputBoundary {
     public void execute(WeatherInputData weatherInputData) {
         final String city = weatherInputData.getCity();
         final Weather weather = weatherData.getCurrentWeather(city);
-        final WeatherOutputData weatherOutputData = new WeatherOutputData(weather);
 
-        weatherPresenter.prepareSuccessView(weatherOutputData);
+        if (weather == null) {
+            weatherPresenter.prepareFailView("Failed to get weather");
+        } else {
+            final WeatherOutputData weatherOutputData = new WeatherOutputData(weather);
+            weatherPresenter.prepareSuccessView(weatherOutputData);
+        }
+
     }
 
 }
