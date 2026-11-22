@@ -89,9 +89,9 @@ Extensions:
 - Edit goal: user changes the target
 - Completed goal: user reaches the goal
 ### Use Case 3
-Name: Start timer
+Name: Study history and statistics
 
-Primary actor: User clicking start timer
+Primary actor: User viewing the study history
 
 Preconditions: Application running
 
