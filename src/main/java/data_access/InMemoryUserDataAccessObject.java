@@ -5,9 +5,11 @@ import java.util.Map;
 
 import entity.User;
 import use_case.signup.SignupUserDataAccessInterface;
+import use_case.login.LoginUserDataAccessInterface;
 
 public class InMemoryUserDataAccessObject
-        implements SignupUserDataAccessInterface {
+        implements SignupUserDataAccessInterface,
+                    LoginUserDataAccessInterface {
 
     private final Map<String, User> users = new HashMap<>();
 
@@ -19,5 +21,10 @@ public class InMemoryUserDataAccessObject
     @Override
     public void save(User user) {
         users.put(user.getUsername(), user);
+    }
+
+    @Override
+    public User get(String username) {
+        return users.get(username);
     }
 }
