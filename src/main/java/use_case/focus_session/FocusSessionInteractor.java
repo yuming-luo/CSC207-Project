@@ -6,6 +6,13 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
 
     private FocusSession currentSession;
     // This is a private attribute belonging to the implementor
+    private final FocusSessionOutputBoundary outputBoundary;
+    private String selectedDrink;
+
+    public FocusSessionInteractor(FocusSessionOutputBoundary outputBoundary) {
+        this.outputBoundary = outputBoundary;
+    }
+
 
     @Override
     public void start(FocusSessionInputData inputData) {
@@ -13,7 +20,10 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
                 inputData.getDuration(),
                 inputData.getTimerMode()
         );
+        this.selectedDrink = inputData.getDrink();
         this.currentSession.start();
+
+        updateOutput();
 
     }
 
@@ -22,6 +32,7 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
         if (this.currentSession != null) {
             this.currentSession.pause();
         }
+        updateOutput();
     }
 
     @Override
@@ -29,6 +40,7 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
         if (this.currentSession != null) {
             this.currentSession.resume();
         }
+        updateOutput();
     }
 
     @Override
@@ -37,6 +49,7 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
             this.currentSession.checkPauseTimeout();
             this.currentSession.end();
         }
+        updateOutput();
     }
 
     @Override
@@ -44,6 +57,7 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
         if (this.currentSession != null) {
             this.currentSession.updateElapsedTime(secondsPassed);
         }
+        updateOutput();
     }
 
     @Override
@@ -51,5 +65,18 @@ public class FocusSessionInteractor implements FocusSessionInputBoundary{
         if (this.currentSession != null) {
             this.currentSession.checkPauseTimeout();
         }
+        updateOutput();
+    }
+
+    private void updateOutput() {
+        FocusSessionOutputData outputData = new FocusSessionOutputData(
+                this.currentSession.getState(),
+                this.currentSession.getTimerType(),
+                this.currentSession.getElapsedSeconds(),
+                this.currentSession.getRemainingSeconds(),
+                this.currentSession.getRemainingPausedSeconds(),
+                this.currentSession.getSessionEndReason(),
+                this.selectedDrink
+        );
     }
 }

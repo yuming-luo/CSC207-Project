@@ -60,6 +60,16 @@ public class FocusSession {
         return Math.max(0, MAX_PAUSE_SECONDS - secondsPaused);
     }
 
+    public SessionEndReason getSessionEndReason() {
+        return sessionEndReason;
+    }
+
+    public int getRemainingSeconds() {
+        return this.remainingSeconds;
+    }
+
+
+
     // methods
     public void start() {
         if (this.state == SessionState.NOT_STARTED) {
