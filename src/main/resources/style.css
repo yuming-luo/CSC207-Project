@@ -1,3 +1,4 @@
+/* App Frame */
 .sidebar {
     -fx-background-color: #A0AF88;
     -fx-alignment: TOP_CENTER;
@@ -32,4 +33,53 @@
 
 .sidebar-button.selected {
     -fx-background-color: #708668;
+}
+
+/* Authentication */
+.auth-background { -fx-background-color: #F4ECD7; }
+
+.auth-card {
+    -fx-background-color: #7B9565;
+    -fx-background-radius: 16;
+    -fx-padding: 40 40 30 40;
+    -fx-alignment: top-center;
+}
+
+.auth-title {
+    -fx-font-family: "Krona One";
+    -fx-font-size: 28px;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 20 0;
+}
+
+.auth-label {
+    -fx-text-fill: #E4EBB5;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.auth-field {
+    -fx-background-color: #B5CB91;
+    -fx-background-radius: 14;
+    -fx-text-fill: #7a5c5c;
+    -fx-prompt-text-fill: #F2C4C4;
+    -fx-padding: 14 16 14 16;
+    -fx-font-weight: bold;
+}
+
+.auth-button {
+    -fx-background-color: #F5D5D3;
+    -fx-background-radius: 14;
+    -fx-text-fill: white;
+    -fx-font-family: "Krona One";
+    -fx-font-size: 17px;
+    -fx-padding: 10 0 10 0;
+    -fx-cursor: hand;
+}
+.auth-button:hover { -fx-background-color: #EFC3C0; }
+
+.auth-link {
+    -fx-text-fill: #F2C4C4;
+    -fx-border-color: transparent;
+    -fx-underline: false;
 }

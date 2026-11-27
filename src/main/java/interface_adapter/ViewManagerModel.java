@@ -13,9 +13,7 @@ public class ViewManagerModel {
 
     private String currentViewName = "";
 
-    public String getCurrentViewName() {
-        return this.currentViewName;
-    }
+    public String getState() { return this.currentViewName; }
 
     public void setState(String currentViewName) {
         this.currentViewName = currentViewName;
@@ -27,9 +25,8 @@ public class ViewManagerModel {
 
     public void notifyViewChanged() {
         for (ViewManagerModelListener listener : listeners) {
-            listener.viewChanged(currentViewName);
+            listener.viewChanged();
         }
     }
-
 }
 
