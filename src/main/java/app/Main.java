@@ -1,22 +1,22 @@
 package app;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
+import javax.swing.*;
+import javafx.embed.swing.JFXPanel;
 
-public class Main extends Application {
-    @Override
-    public void start(Stage stage) {
-        StackPane root = new StackPane(new Label("Hello, JavaFX!"));
-        stage.setScene(new Scene(root, 400, 300));
-        stage.setTitle("My App");
-        stage.show();
-    }
+import java.awt.*;
 
+public class Main {
     public static void main(String[] args) {
-        launch(args);
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Study Nook");
+            frame.getContentPane().setBackground(new Color(224, 236, 215));
+            JFXPanel fxPanel = new AppFrame();
+
+            frame.add(fxPanel);
+            frame.setSize(800, 500);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+        });
     }
 }
 

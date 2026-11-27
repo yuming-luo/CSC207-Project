@@ -1,0 +1,35 @@
+.sidebar {
+    -fx-background-color: #A0AF88;
+    -fx-alignment: TOP_CENTER;
+    -fx-spacing: 0;
+    -fx-padding: 0;
+    -fx-pref-width: 105;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-font-family: "Krona One";
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-wrap-text: true;
+    -fx-padding: 15 5 15 5;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+
+    /*-fx-focus-color: transparent;*/
+    /*-fx-faint-focus-color: transparent;*/
+    -fx-pref-width: 105;
+    -fx-pref-height: 84;
+}
+
+.sidebar-button:hover {
+    -fx-border-color: #708668;
+}
+
+.sidebar-button.selected {
+    -fx-background-color: #708668;
+}

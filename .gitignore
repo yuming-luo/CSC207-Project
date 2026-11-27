@@ -9,3 +9,5 @@ out/
 
 # IntelliJ local files
 *.iml
+
+env
